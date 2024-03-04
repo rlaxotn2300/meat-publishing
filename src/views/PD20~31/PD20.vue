@@ -2,18 +2,19 @@
 import { ref, computed } from 'vue';
 import TipText from '../../components/TipText.vue';
 import TagTip from '../../components/TagTip.vue';
-import CancelModal from '@/components/modal/CancelModal.vue'
+import CancelModal from '@/components/modal/CancelModal.vue';
+import ToggleNav from '../../components/ToggleNav.vue';
 
-//버튼 활성화
 const textAreaValue = ref('');
 const inputValue = ref('');
 const isInputNotEmpty = computed(() => {
   return textAreaValue.value.trim() !== '' && inputValue.value.trim() !== '';
 });
 
-//말풍선 끄고켜기
 const showRegistrationTip = ref(true)
+const stateRegistrationModal = ref(false);
 const showTagTip = ref(true);
+
 const hideTagTip = () => {
   showTagTip.value = false;
 }
@@ -21,7 +22,6 @@ const hideRegistrationTip = () => {
   showRegistrationTip.value = false;
 }
 
-const stateRegistrationModal = ref(false);
 const handleOpenModal = () => {
   stateRegistrationModal.value = true;
 }
@@ -35,11 +35,11 @@ const butttonEvent = () => {
   }
 }
 
-const modalValue = "글을 올리시겠습니까?"
 </script>
 
 <template>
   <div class='item-list-write'>
+    <ToggleNav />
     <div class="header">
       <img src="../../images/svg/arrow-narrow-left.svg" alt="back">
       <p>품목표 글쓰기</p>
@@ -49,7 +49,6 @@ const modalValue = "글을 올리시겠습니까?"
         <img src="../../images/icon-global.png" alt="global-logo" >
         <p>(주)미트박스글로벌</p>
       </div>
-      <CancelModal v-if="stateRegistrationModal" :modalFn="handleCloseModal" :modalValue="'글을 올리시겠습니까?'"/>
       <div class="registration-box">
         <div class="content">
           <div class="input-text-box">
@@ -81,6 +80,7 @@ const modalValue = "글을 올리시겠습니까?"
     <button class="registration-button" :class="{ active: isInputNotEmpty }" @click="butttonEvent">
       작성완료
     </button>
+    <CancelModal v-if="stateRegistrationModal" :modalFn="handleCloseModal" :modalValue="'글을 올리시겠습니까?'"/>
   </div>
 </template>
 
@@ -91,7 +91,7 @@ const modalValue = "글을 올리시겠습니까?"
   font-family: Pretendard;
   margin:0 auto;
   width:360px;
-  height:95vh;
+  height:195vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,4 +205,5 @@ const modalValue = "글을 올리시겠습니까?"
     margin-top:180px;
   }
 }
-</style>
+</style>import ToggleNavVue from '@/components/ToggleNav.vue';
+

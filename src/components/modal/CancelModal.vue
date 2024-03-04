@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
-const modalValue = 'Default Value';
 const props = defineProps({
   modalFn:Function,
+  modalValue:String,
+  resolveValue: { type: String, default: null }
 })
 </script>
 
@@ -10,7 +11,8 @@ const props = defineProps({
   <div class='view-wrap'>
     <div class="modal-wrap">
       <div class="text-box">
-        <p>{{modalValue}}</p>
+        <p>{{ modalValue }}</p>
+        <p v-if="resolveValue !== null" class="resolveValue">{{ resolveValue }}</p>
       </div>
       <div class="button-box">
         <button class="close-button" @click="modalFn">
@@ -32,7 +34,7 @@ const props = defineProps({
   top:0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index:1;
+  z-index:2;
 }
 .modal-wrap{
   width:320px;
@@ -57,6 +59,15 @@ const props = defineProps({
   letter-spacing: -0.02em;
   text-align: center;
 
+  .resolveValue{
+    color: var(--Neutral-Neutral-400, #575757);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px;
+    letter-spacing: -0.28px;
+    margin-top: -10px;
+  }
 }
 .button-box{
   display: flex;
