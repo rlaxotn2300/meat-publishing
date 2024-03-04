@@ -8,7 +8,7 @@
             본인 인증을해주세요.
         </p>
         <div class="authentication-icon">
-            <img src="../images/icon-authentication.png" alt="authentication-icon"/>
+            <img src="../../images/icon-authentication.png" alt="authentication-icon"/>
         </div>  
         <button class="to-authentication">
             본인 인증하러가기

@@ -93,9 +93,10 @@
     .close-button{
         width: 120px;
         height: 40px;
-        padding: 9px, 0px, 9px, 0px;
+        padding: 9px 0 9px 0;
         border:1px solid #cacaca;
         border-radius: 48px;
+        background: #ffffff;
 
         color: #888888;
         font-family: Pretendard;

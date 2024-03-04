@@ -23,8 +23,8 @@ const logintype = router.currentRoute._value.query.provider
          <div class="login-information">
             <div>{{props.provider}}</div>
             <p class="email">Abcsd***@ka***.com</p>
-            <img v-if="logintype === 'kakao'" src="../images/svg/login-kakao.svg" alt="login-to-kakao"/>
-            <img v-if="logintype === 'naver'" src="../images/svg/login-naver.svg" alt="login-to-naver"/>
+            <img v-if="logintype === 'kakao'" src="../../images/svg/login-kakao.svg" alt="login-to-kakao"/>
+            <img v-if="logintype === 'naver'" src="../../images/svg/login-naver.svg" alt="login-to-naver"/>
         </div>  
     </div>
 </template>

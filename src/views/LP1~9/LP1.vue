@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import RecentLogin from '../components/RecentlyLogin.vue';
+import RecentLogin from '../../components/RecentlyLogin.vue';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -15,15 +15,15 @@ const toggleRecentLogin = (provider: string) => {
 <template>
   <div class="login-wrap">
     <main>
-      <img src="../images/logo-lightBg.png" alt="logo" class="main-logo" />
+      <img src="../../images/logo-lightBg.png" alt="logo" class="main-logo" />
       <div class="button-wrap">
         <div class="kakao-button oauthLogin" @click="toggleRecentLogin('kakao')">
           <RecentLogin v-if="showRecentLogin === 'kakao'" />
-          <img src="../images/svg/login-kakao.svg" alt="kakao-login" class="kakao-login" />
+          <img src="../../images/svg/login-kakao.svg" alt="kakao-login" class="kakao-login" />
         </div>
         <div class="naver-button oauthLogin" @click="toggleRecentLogin('naver')">
           <RecentLogin v-if="showRecentLogin === 'naver'" />
-          <img src="../images/svg/login-naver.svg" alt="naver-login" class="naver-login" />
+          <img src="../../images/svg/login-naver.svg" alt="naver-login" class="naver-login" />
         </div>
       </div>
     </main>
