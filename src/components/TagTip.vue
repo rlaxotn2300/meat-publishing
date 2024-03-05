@@ -2,7 +2,7 @@
   <div class="tag-Recentlybox">
     <ul>
       <li>태그를 등록 하면 검색 노출에 용이합니다.</li>
-      <li>강조핟고 싶은 품목 or 거래가능 지역 등<br /> 거래 시 필요한 나만의 특징을 단어로 적어주세요.</li>
+      <li>강조하고 싶은 품목 or 거래가능 지역 등<br /> 거래 시 필요한 나만의 특징을 단어로 적어주세요.</li>
     </ul>
     <div class="tag-triangle"></div>
   </div>
@@ -12,12 +12,13 @@
 .tag-Recentlybox{
   background: #090A0A;
   margin:0 auto;
-  width:287px;
+  width:241px;
   border-radius: 4px;
   padding:8px 12px;
   position:absolute;
   top:45px;
   left:0px;
+  z-index: 1;
 
   color:#ffffff;
   font-family: Pretendard;

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
@@ -110,7 +111,7 @@
         background:#dd2c2f;
         width: 120px;
         height: 40px;
-        padding: 9px, 19px, 9px, 19px;
+        padding: 9px 19px 9px 19px;
         border:none;
         border-radius: 48px;
 

@@ -2,8 +2,8 @@
 import { ref, computed } from 'vue';
 import TipText from '../../components/TipText.vue';
 import TagTip from '../../components/TagTip.vue';
-import CancelModal from '@/components/modal/CancelModal.vue';
-import ToggleNav from '../../components/ToggleNav.vue';
+import CancelModal from '@/components/modal/PD20.vue';
+import ToggleNav from '@/components/ToggleNav.vue';
 
 const textAreaValue = ref('');
 const inputValue = ref('');
@@ -34,12 +34,10 @@ const butttonEvent = () => {
     return handleOpenModal()
   }
 }
-
 </script>
 
 <template>
   <div class='item-list-write'>
-    <ToggleNav />
     <div class="header">
       <img src="../../images/svg/arrow-narrow-left.svg" alt="back">
       <p>품목표 글쓰기</p>
@@ -49,6 +47,7 @@ const butttonEvent = () => {
         <img src="../../images/icon-global.png" alt="global-logo" >
         <p>(주)미트박스글로벌</p>
       </div>
+      <Notive />
       <div class="registration-box">
         <div class="content">
           <div class="input-text-box">
@@ -60,6 +59,7 @@ const butttonEvent = () => {
           </div>
           <p class="essential">* 필수 입력</p>
         </div>
+<!--        <VueEditor />-->
         <textarea v-model="textAreaValue" placeholder="품목표를 최초 1회만 등록하시면,이후 불러오기를 통해 간편하게 수정할 수 있어요!" />
       </div>
       <div class="tag-box">
@@ -77,6 +77,7 @@ const butttonEvent = () => {
         <input v-model="inputValue" placeholder="핵심 키워드를 입력해주세요!" type="text" class="input-keyword"/>
       </div>
     </div>
+    <ToggleNav />
     <button class="registration-button" :class="{ active: isInputNotEmpty }" @click="butttonEvent">
       작성완료
     </button>
@@ -91,7 +92,7 @@ const butttonEvent = () => {
   font-family: Pretendard;
   margin:0 auto;
   width:360px;
-  height:195vh;
+  height:95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +106,15 @@ const butttonEvent = () => {
     align-items: center;
     justify-content: flex-start;
     img{
-      margin:0 97px 0 10px
+      margin:0 87px 0 16px
+    }
+    p{
+      color: #575757;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.28px;
     }
   }
   .section-wrap{
@@ -117,7 +126,10 @@ const butttonEvent = () => {
   .logo-box{
     display: flex;
     align-items: center;
-    margin-top:10px
+    margin-top:10px;
+    img{
+    margin-right:8px;
+  }
   }
   .registration-title{
     color:#333333;
@@ -205,5 +217,5 @@ const butttonEvent = () => {
     margin-top:180px;
   }
 }
-</style>import ToggleNavVue from '@/components/ToggleNav.vue';
+</style>
 

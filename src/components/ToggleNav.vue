@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CancelModal from "./modal/CancelModal.vue";
+import CancelModal from "./modal/PD20.vue";
 import { ref } from 'vue';
 
 const isMenuVisible = ref(false);
@@ -23,14 +23,17 @@ function toggleMenu() {
       </button>
   
       <div v-if="isMenuVisible" class="menu">
-        <div class="tab red-font" :class="{ active: activeTab === 'tab1' }" @click="activeTab = 'tab1'">
-          <img src="../images/svg/file-check-red.svg" alt="product-tap"/>품목표 글쓰기
+        <div class="tab" :class="{ active: activeTab === 'tab1', 'red-font': activeTab === 'tab1' }" @click="activeTab = 'tab1'">
+          <img v-if="activeTab === 'tab1'" src="../images/svg/file-check-red.svg" alt="product-tap"/>
+          <img v-if="activeTab !== 'tab1'" src="../images/svg/file-check.svg" alt="product-tap"/>품목표 글쓰기
         </div>
-        <div class="tab" :class="{ active: activeTab === 'tab2' }" @click="activeTab = 'tab2'">
-          <img src="../images/svg/coins-hand.svg" alt="sell-tap"/>팝니다 글쓰기
+        <div class="tab" :class="{ active: activeTab === 'tab2','red-font': activeTab === 'tab2' }" @click="activeTab = 'tab2'">
+          <img v-if="activeTab === 'tab2'" src="../images/svg/coins-hand-red.svg" alt="sell-tap"/>
+          <img v-if="activeTab !== 'tab2'" src="../images/svg/coins-hand.svg" alt="sell-tap"/>팝니다 글쓰기
         </div>
-        <div class="tab" :class="{ active: activeTab === 'tab3' }" @click="activeTab = 'tab3'">
-          <img src="../images/svg/shopping-cart.svg" alt="buy-tap"/>삽니다 글쓰기
+        <div class="tab" :class="{ active: activeTab === 'tab3', 'red-font': activeTab === 'tab3' }" @click="activeTab = 'tab3'">
+          <img v-if="activeTab === 'tab3'" src="../images/svg/shopping-cart-red.svg" alt="buy-tap"/>
+          <img v-if="activeTab !== 'tab3'" src="../images/svg/shopping-cart.svg" alt="buy-tap"/>삽니다 글쓰기
         </div>
         
       </div>
